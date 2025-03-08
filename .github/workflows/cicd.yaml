@@ -19,7 +19,7 @@ jobs:
         run: docker/setup-buildx-action@v3
 
       - name: MFlow Tracking server + Service
-        run: docker compose up --build
+        run: docker compose up -d --build 
 
       - name: Install packages from conda
         uses: conda-incubator/setup-miniconda@v3
