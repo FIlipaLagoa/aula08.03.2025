@@ -5,7 +5,7 @@ services:
     command: mlflow ui --port 5000 --host 0.0.0.0 --backend-store-uri ./mlruns --artifacts-destination ./mlruns
     volumes:
      - ./modelos:/mlruns
-    container_name: host
+    container_name: tracking
     ports:
      - "5000:5000"
 
@@ -17,9 +17,9 @@ services:
       dockerfile: Dockerfile.Service 
       tags:
         - diabetes-predition-service
-        - ghcr.io/FilipaLagoa/diabetes-predition-service 
+        - ghcr.io/filipalagoa/diabetes-predition-service 
     image: diabetes-predition-service
-    container_name: host
+    container_name: service
     ports:
      - 5002:5002
 
@@ -32,7 +32,7 @@ services:
       tags:
         - diabetes-predition-ui
     image: diabetes-predition-ui
-    container_name: host
+    container_name: ui
     ports:
       - 5003:5003
 
