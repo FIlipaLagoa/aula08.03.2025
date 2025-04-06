@@ -1,4 +1,4 @@
-name: OML
+name: OMLFL
 channels:
   - conda-forge
   - defaults
